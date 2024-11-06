@@ -9,12 +9,12 @@ interface IEmail {
 export class AuthEmail {
     static sendConfirmationEmail = async ( user : IEmail ) => {
         const info = await transporter.sendMail({
-            from: 'Uptask <admin@uptask.com>',
+            from: 'InventoryFlow <admin@InventoryFlow.com>',
             to: user.email,
-            subject: 'Uptask - confirmar cuenta',
-            text: 'Uptask - confirmar cuenta',
+            subject: 'InventoryFlow - confirmar cuenta',
+            text: 'InventoryFlow - confirmar cuenta',
             html: `
-                <p>Hola: ${user.name}, has creado tu cuenta en UpTask, confirma tu cuenta</p>
+                <p>Hola: ${user.name}, has creado tu cuenta en InventoryFlow, confirma tu cuenta</p>
                 <p>Visita el siguiente enlace</p>
                 <a href="${process.env.FRONTEND_URL}/auth/confirm-account">Confirma tu cuenta</a>
                 <p>E ingresa el código: <b>${user.token}</b></p>
@@ -26,10 +26,10 @@ export class AuthEmail {
 
     static sendPasswordResetToken = async ( user : IEmail ) => {
         const info = await transporter.sendMail({
-            from: 'Uptask <admin@uptask.com>',
+            from: 'InventoryFlow <admin@InventoryFlow.com>',
             to: user.email,
-            subject: 'Uptask - Restablece tu password',
-            text: 'Uptask - Restablece tu password',
+            subject: 'InventoryFlow - Restablece tu password',
+            text: 'InventoryFlow - Restablece tu password',
             html: `
                 <p>Hola: ${user.name}, has solicitado restablecer tu password.</p>
                 <a href="${process.env.FRONTEND_URL}/auth/new-password">Restablecer password</a>
